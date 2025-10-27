@@ -1,10 +1,14 @@
 // app.jsx
 
+import Badge from './components/Badge';
+
 function App() {
 
   return (
     <>
-      <p>Ready to go!</p>
+      <Badge
+        text = 'cool badge'
+      />
     </>
   )
 }
