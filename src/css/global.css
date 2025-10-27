@@ -2,17 +2,32 @@
 
 /* variables, resets and defaults */
 :root {
-  --body-font-color: hsl(0, 0%, 80%);
+  --green-light: #ECF3CB;
+  --green-medium: #676A57;
+  --green-dark: #3E4034;
+  --tan-light: #E2D1C5;
+  --tan-medium: #FFD4A8;
+  --tan-dark: #553F28;
+  --complimentary-purple: #816295;
+  --complimentary-purple-dark: #3B3440;
+  --complimentary-blue: #A8EBFF;
+  --complimentary-blue-dark: #89A2AA;
+  --gray-light: #F5F5F5;
+  --gray-medium: #CCCCCC;
+  --gray-dark: #333333;
+  --primary-green: var(--green-dark);
+  --primary-tan: var(--tan-light);
   --border-radius: 30px;
-  --font-family: 'Raleway', sans-serif;
+  --font-family-raleway: 'Raleway', sans-serif;
+  --font-family-cabin: 'Cabin', sans-serif;
   --font-size: 16px;
   --line-height: 1.5;
   --font-weight: 400;
-  --text-color: hsl(0, 0%, 90%);
-  --background-color: hsl(0, 0%, 10%);
+  --text-color: var(--tan-light);
+  --background-color: var(--gray-dark);
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --card-bg-color: hsl(0, 0%, 20%);
-  --header-bg-color: hsl(167, 100%, 11%);
+  --card-bg-color: var(--gray-medium);
+  --header-bg-color: var(--green-dark);
   --header-padding: 0.5rem;
   --body-padding: 1rem;
   --body-margin: 1rem;
@@ -41,7 +56,7 @@ a:hover {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-family-raleway);
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-weight: var(--font-weight);
@@ -82,7 +97,7 @@ h5 {
   font-size: 1.333em;
 }
 p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-cabin);
   font-size: 1em;
 }
 
