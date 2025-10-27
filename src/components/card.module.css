@@ -30,6 +30,10 @@
   }
 }
 
+img {
+  margin-top: -16px;
+}
+
 .cardBody {
   padding: 0.75rem;
   background-color: var(--gray-medium);
