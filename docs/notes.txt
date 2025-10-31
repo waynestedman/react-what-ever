@@ -1,0 +1,4 @@
+button:
+3 sizes: small, regular, large
+5 states: idle, platter, hover, selected, disabled
+2 styles: capsule, rounded

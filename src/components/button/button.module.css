@@ -1,0 +1,192 @@
+/* Base button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 590;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+}
+
+/* Size variants */
+.size-small {
+  height: 36px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.size-regular {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.size-large {
+  height: 52px;
+  padding: 0 25px;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+/* Style variants */
+.style-capsule.size-small {
+  border-radius: 18px;
+}
+
+.style-capsule.size-regular {
+  border-radius: 22px;
+}
+
+.style-capsule.size-large {
+  border-radius: 26px;
+}
+
+.style-rounded.size-small {
+  border-radius: 9px;
+}
+
+.style-rounded.size-regular {
+  border-radius: 12px;
+}
+
+.style-rounded.size-large {
+  border-radius: 16px;
+}
+
+/* State: Idle (No Platter) */
+.state-idle {
+  background: transparent;
+}
+
+.state-idle .label {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* State: Idle (Platter) */
+.state-platter {
+  background: rgba(94, 94, 94, 0.18);
+  position: relative;
+}
+
+.state-platter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.state-platter .label {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* State: Hover */
+.state-hover,
+.button:hover:not(:disabled):not(.state-selected):not(.state-disabled) {
+  background: rgba(94, 94, 94, 0.18);
+  position: relative;
+}
+
+.state-hover::before,
+.button:hover:not(:disabled):not(.state-selected):not(.state-disabled)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      circle at center bottom,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0) 55.59%
+    ),
+    rgba(255, 255, 255, 0.06);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+.state-hover::after,
+.button:hover:not(:disabled):not(.state-selected):not(.state-disabled)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center bottom,
+    rgba(94, 94, 94, 0.14) 0%,
+    rgba(94, 94, 94, 0) 73.85%
+  );
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+}
+
+.state-hover .label,
+.button:hover:not(:disabled):not(.state-selected):not(.state-disabled) .label {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* State: Selected */
+.state-selected {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.state-selected .label {
+  color: rgba(0, 0, 0, 1);
+}
+
+/* State: Disabled */
+.state-disabled,
+.button:disabled {
+  cursor: not-allowed;
+  background: rgba(94, 94, 94, 0.07);
+  position: relative;
+}
+
+.state-disabled::before,
+.button:disabled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.04);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.state-disabled .label,
+.button:disabled .label {
+  color: rgba(255, 255, 255, 0.1);
+  mix-blend-mode: lighten;
+  position: relative;
+}
+
+.state-disabled .label::after,
+.button:disabled .label::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: rgba(94, 94, 94, 0.45);
+  mix-blend-mode: color-dodge;
+}
+
+/* Smooth transitions for state changes */
+.button:not(:disabled) {
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
