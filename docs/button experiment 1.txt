@@ -1,0 +1,9 @@
+# In /src/components make a directory named "button". 
+# Use this URL https://www.figma.com/design/mt0i2sxn4dUBUrpFPwwhLS/to-code?node-id=11-48&m=dev and read the selected frame "Button - Text" from Figma.
+# ignore all other frames and pages in Figma.
+# Use the Figma MCP server and Figma API.
+# Here is my Figma personal access token: 
+# In /button create a React button component Button.jsx with all the variants found in that Figma frame.
+# Create a new CSS modules file, button.module.css for this component.
+# Do not use any other styles from this project or anything that is not found in this Figma component.
+# Create props in the component to be able to select which variant is being used.
